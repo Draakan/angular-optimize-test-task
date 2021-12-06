@@ -1,0 +1,15 @@
+table {
+  border: 1px solid black;
+}
+
+table tr:first-child {
+  background-color: #e2e2e2;
+}
+
+table tr.selected td {
+  background: yellow;
+}
+
+table td {
+  padding: 10px 20px;
+}
