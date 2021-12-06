@@ -11,6 +11,6 @@
   >
     <td>{{ item.id }}</td>
     <td>{{ item.name }}</td>
-    <td>{{ item | memoize }}</td>
+    <td>{{ getStatus(item) }}</td>
   </tr>
 </table>

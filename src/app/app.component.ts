@@ -1,19 +1,8 @@
-import { Component, Pipe, PipeTransform } from '@angular/core';
+import { Component } from '@angular/core';
 
 export interface IDataItem {
   name: string;
   id: number;
-}
-
-@Pipe({
-  name: 'memoize',
-})
-export class Memoize implements PipeTransform {
-  transform(item: IDataItem): string {
-    const status = getStatus(item.id);
-
-    return `${item.id} ${item.name} ${status}`;
-  }
 }
 
 @Component({
@@ -47,6 +36,12 @@ export class AppComponent {
  
   public onSelect(item: IDataItem): void {
     this.selected = item;
+  }
+  
+  public getStatus(item: IDataItem): string {
+    const status: string = getStatus(item.id)
+    
+    return `${item.id} ${item.name} ${status}`;
   }
 
 }
